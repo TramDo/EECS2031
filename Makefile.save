@@ -1,0 +1,18 @@
+CC=gcc
+CFLAGS=-lWarn -pedantic
+
+tester: tester.o libmyifttt.a
+	al$(CC) tester.o -L. -lmyifttt -lcurl -o tester
+alarm: 
+
+libmyifttt.a:	ifttt.o
+	ar -rcs libmyifttt.a ifttt.o
+
+ifttt.o: 	ifttt.c ifttt.h
+	$(CC) $(CFLAGS) -c -ansi $<
+
+tester.o:	tester.c ifttt.h
+	alarm.o labmyifttt.a
+	$(CC) alarm.o -L. -lmhfttt - lcurl -o alarm 
+clean:
+	rm tester *.o
