@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main (int argc, char *argv[])
+{
+	wiringPiSetup();
+	pinMode (1, INPUT);
+	if (digitalRead(1)==1)
+		digitalWrite (0, LOW);
+	else
+		digitalWrite (0, HIGH);
+	
+	return 0;
+}

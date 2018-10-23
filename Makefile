@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CC=gcc
 CFLAGS=-lWarn -pedantic
 LDFLAGS=-lwiringPi
@@ -24,3 +25,19 @@ all:	tester alarm
 
 clean:
 	rm tester *.o
+=======
+OBJS=main.o morsecode.o
+LDFLAGS=-lwiringPi
+CC=gcc
+CFLAGS=-Wall -pedantic 
+
+%.o:	%.c morsecode.h
+	$(CC) $(CFLAGS) -c -ansi $<
+
+
+main:	${OBJS}
+	$(CC) $(CFLAGS) ${OBJS} -o main $(LDFLAGS)
+    
+
+
+>>>>>>> 1283e3aa4a9dfd69d61c8f8da990ffd500e4f3f8
